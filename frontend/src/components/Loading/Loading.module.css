@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.loaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cb81ff;
+
+    width: 402px;
+    height: 70px;
+    gap: 10px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-right: 27px;
+    padding-bottom: 15px;
+    padding-left: 27px;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2ae881;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.description {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+}

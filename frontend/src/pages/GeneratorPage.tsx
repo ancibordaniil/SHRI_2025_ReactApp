@@ -1,7 +1,9 @@
+import GenerateBody from "../components/GenerateBody/GenerateBody";
+
 export default function GenetatorPage() {
   return (
     <>
-        <div>Generator</div>
+        <GenerateBody />
     </>
   );
 }

@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+    gap: 60px;
+}
+
+.upperPartContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    span {
+        font-weight: 700;
+    }
+}
+
+.dropZone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #eacdff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #eacdff;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+    transition: all 0.3s;
+
+    .uploadFileBtn {
+        background-color: #ffffff;
+
+        gap: 10px;
+        border-radius: 10px;
+        padding-top: 15px;
+        padding-right: 27px;
+        padding-bottom: 15px;
+        padding-left: 27px;
+
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 110.00000000000001%;
+        letter-spacing: 0%;
+        text-align: center;
+
+        border: none;
+    }
+}
+
+.dragging {
+    background-color: #D4FAE6;
+}
+
+.sendButton {
+    background-color: #c0c0c0;
+    color: #787878;
+
+    border-radius: 25px;
+    padding-top: 15px;
+    padding-right: 27px;
+    padding-bottom: 15px;
+    padding-left: 27px;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    border: none;
+}
+
+.active {
+    background-color: #2ae881;
+    color: #201b10;
+    cursor: pointer;
+}
+
+.uploadButton:hover {
+    background-color: #bbb;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+}

@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.errorDescription {
+    color: #ff5f00;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.errButton {
+    color: #ffffff;
+    font-family: Roboto;    
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    background-color: #ff5f00;
+
+    gap: 10px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-right: 27px;
+    padding-bottom: 15px;
+    padding-left: 27px;
+    border-radius: 10px;
+}
+
+.cancelBtn {
+    background-color: #201b10;
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+    gap: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+
+    img {
+        background-color: #201b10;
+        width: 32px;
+        height: 32px;
+        transition: 0.3s all ease-in-out;
+    }
+}
+
+.cancelBtn:hover {
+    background-color: rgb(124, 124, 124);
+
+    img {
+        background-color: rgb(124, 124, 124);
+    }
+}

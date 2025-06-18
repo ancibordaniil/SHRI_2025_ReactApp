@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.title {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.startButton,
+.doneButton,
+.errButton {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    border-radius: 25px;
+    padding-top: 15px;
+    padding-right: 27px;
+    padding-bottom: 15px;
+    padding-left: 27px;
+
+    border: none;
+}
+
+.doneButton {
+    background-color: #d4fae6;
+    border-radius: 10px;
+}
+
+.startButton {
+    background-color: #2ae881;
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+}
+
+.startButton:hover {
+    background-color: #58e296;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.button:hover {
+    background-color: #e65c00;
+}
+
+.description {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.cancelBtn {
+    background-color: #201b10;
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+    gap: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+
+    img {
+        background-color: #201b10;
+        width: 32px;
+        height: 32px;
+        transition: 0.3s all ease-in-out;
+    }
+}
+
+.cancelBtn:hover {
+    background-color: rgb(124, 124, 124);
+
+    img {
+        background-color: rgb(124, 124, 124);
+    }
+}
