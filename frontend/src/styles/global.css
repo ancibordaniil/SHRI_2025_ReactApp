@@ -1,0 +1,18 @@
+:root {
+  --color-bg: #0d0d0d;
+  --color-text: #f1f1f1;
+  --color-accent: #00ffff;
+  --font-main: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
