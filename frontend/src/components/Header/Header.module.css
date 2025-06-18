@@ -1,0 +1,74 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.imageContainer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    .galacticImage {
+        width: 523.7312622070312px;
+        height: 38.13983154296875px;
+    }
+
+    .schoolImage {
+        width: 259.3310546875px;
+        height: 53.680580139160156px;
+    }
+}
+
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.Link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 10px;
+  gap: 16px;
+
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 110%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.Link img {
+  width: 35px;
+  height: 35px;
+}
+
+.Link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background-color: #201B10;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.Link:hover::after {
+  transform: scaleX(1);
+}
+
+.active::after {
+  transform: scaleX(1);
+}
+
