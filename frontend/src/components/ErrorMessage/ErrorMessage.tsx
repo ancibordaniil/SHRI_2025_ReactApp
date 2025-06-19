@@ -2,13 +2,17 @@ import React from 'react';
 import styles from './ErrorMessage.module.css';
 import { useGenerateStore } from '../../store/store';
 
-const Error: React.FC = () => {
+interface ErrorProps {
+  title?: string;
+}
+
+const ErrorMessage: React.FC<ErrorProps> = ({ title }) => {
   const setStatus = useGenerateStore((state) => state.setStatus);
 
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>
-        <div className={styles.errButton}>Ошибка</div>
+        <div className={styles.errButton}>{ title }</div>
         <button
           className={styles.cancelBtn}
           onClick={() => setStatus('initial')}
@@ -21,4 +25,4 @@ const Error: React.FC = () => {
   );
 };
 
-export default Error;
+export default ErrorMessage;

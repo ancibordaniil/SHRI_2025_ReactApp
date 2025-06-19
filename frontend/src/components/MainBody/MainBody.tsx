@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './MainBody.module.css';
 
 const MainBody: React.FC = () => {
     const [isDragging, setIsDragging] = useState<boolean>(false);
     const [fileName, setFileName] = useState<string | null>(null);
     const [isActive, setIsActive] = useState<boolean>(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    const isCsvFile = (file: File) => file.name.endsWith('.csv');
 
     const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
         event.preventDefault();
@@ -19,12 +22,29 @@ const MainBody: React.FC = () => {
     const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
         event.preventDefault();
         setIsDragging(false);
-        setIsActive(true);
         const files = event.dataTransfer.files;
-        if (files.length > 0) {
+        if (files.length > 0 && isCsvFile(files[0])) {
             setFileName(files[0].name);
+            setIsActive(true);
         }
     };
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file && isCsvFile(file)) {
+            setFileName(file.name);
+            setIsActive(true);
+        }
+    };
+
+    const handleUploadClick = () => {
+        fileInputRef.current?.click();
+    };
+
+    const handleReturnChanges = () => {
+        setIsActive(false)
+        setFileName(null)
+    }
 
     return (
         <section className={styles.container}>
@@ -33,6 +53,7 @@ const MainBody: React.FC = () => {
                     Загрузите <span>csv</span> файл и получите <span>полную информацию</span> о нём
                     за сверхнизкое время
                 </h1>
+
                 <div
                     className={`${styles.dropZone} ${isDragging ? styles.dragging : ''}`}
                     onDragOver={handleDragOver}
@@ -40,10 +61,26 @@ const MainBody: React.FC = () => {
                     onDrop={handleDrop}
                 >
                     <div className={`${styles.instructions} ${isDragging ? styles.dragging : ''}`}>
-                        <button className={styles.uploadFileBtn}>Загрузить файл</button>
-                        или перетащите сюда
+                        {fileName ? (
+                            <div className={styles.fileName}>{fileName}</div>
+                        ) : (
+                            <>
+                                <button className={styles.uploadFileBtn} onClick={handleUploadClick}>
+                                    Загрузить файл
+                                </button>
+                                или перетащите сюда
+                            </>
+                        )}
                     </div>
+                    <input
+                        type="file"
+                        accept=".csv"
+                        style={{ display: 'none' }}
+                        ref={fileInputRef}
+                        onChange={handleFileChange}
+                    />
                 </div>
+
                 {isActive ? (
                     <button
                         className={`${styles.sendButton} ${isActive ? styles.active : ''}`}
@@ -54,12 +91,13 @@ const MainBody: React.FC = () => {
                 ) : (
                     <div
                         className={styles.sendButton}
-                        onClick={() => setIsActive(false)}
+                        onClick={() => handleReturnChanges()}
                     >
                         Отправить
                     </div>
                 )}
             </div>
+
             <div className={styles.result}>
                 Здесь
                 <br />

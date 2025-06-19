@@ -77,10 +77,14 @@
 
         border: none;
     }
+
+    .fileName {
+        background-color: #eacdff;
+    }
 }
 
 .dragging {
-    background-color: #D4FAE6;
+    background-color: #d4fae6;
 }
 
 .sendButton {

@@ -1,18 +1,60 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useGenerateStore } from '../../store/store';
 import Loading from '../Loading/Loading';
-import Error from '../ErrorMessage/ErrorMessage';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import styles from './GenerateBody.module.css';
 
 const GenerateBody: React.FC = () => {
   const { status, setStatus } = useGenerateStore();
 
-  const handleClick = () => {
+  const handleClick = useCallback(async () => {
     setStatus('loading');
-    setTimeout(() => {
-      setStatus(Math.random() > 0.5 ? 'done' : 'error');
-    }, 2000);
-  };
+    try {
+      const response = await fetch('http://localhost:3000/report?size=1&withErrors=off&maxSpend=1000', {
+        method: 'GET',
+        headers: {
+          'Accept': 'text/csv, application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP err! Status: ${response.status}`);
+      }
+
+      const contentType = response.headers.get('content-type');
+      if (contentType?.includes('text/csv')) {
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'report.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        setStatus('done');
+      } else if (contentType?.includes('application/json')) {
+        const data = await response.json();
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        setStatus('done');
+      } else {
+        throw new Error('content-type error');
+      }
+    } catch (error: unknown) {
+      let errorMessage: string;
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (typeof error === 'string') {
+        errorMessage = error;
+      } else {
+        errorMessage = 'Unknown error';
+      }
+      console.error('Error generating:', errorMessage);
+      setStatus('error');
+    }
+  }, [setStatus]);
 
   return (
     <div className={styles.container}>
@@ -36,7 +78,7 @@ const GenerateBody: React.FC = () => {
           <h1 className={styles.description}>файл сгенерирован!</h1>
         </div>
       )}
-      {status === 'error' && <Error />}
+      {status === 'error' && <ErrorMessage title='Ошибка' />}
     </div>
   );
 };
