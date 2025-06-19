@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type Status = 'initial' | 'loading' | 'done' | 'error';
+type Status = 'initial' | 'load' | 'loading' | 'done' | 'error';
 
 interface GenerateState {
   status: Status;

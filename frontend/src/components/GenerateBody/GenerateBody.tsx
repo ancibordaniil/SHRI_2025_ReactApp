@@ -10,7 +10,7 @@ const GenerateBody: React.FC = () => {
   const handleClick = useCallback(async () => {
     setStatus('loading');
     try {
-      const response = await fetch('http://localhost:3000/report?size=1&withErrors=off&maxSpend=1000', {
+      const response = await fetch('http://localhost:3000/report?size=0.1&withErrors=off&maxSpend=1000', {
         method: 'GET',
         headers: {
           'Accept': 'text/csv, application/json',
