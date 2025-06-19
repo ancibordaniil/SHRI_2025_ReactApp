@@ -1,44 +1,93 @@
 .modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.container {
+    position: relative;
+
+    top: 0px;
+    right: -460px;
 }
 
 .modalContent {
-  background-color: #f0e0e8;
-  padding: 20px;
-  border-radius: 5px;
-  width: 300px;
-  max-height: 80vh;
-  overflow-y: auto;
-  border: 1px solid #d4a5c0;
-  position: relative;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    background-color: #ffffff;
+
+    top: 253px;
+    width: 1000px;
+    max-height: 820px;
+    height: 1111px;
+    padding: 40px;
+    border-radius: 45px 45px 0px 0px;
+    min-height: 115px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    box-shadow: 0 -6px 21px rgba(0, 0, 0, 0.35);
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
 }
 
-.modalContent h2 {
-  margin-top: 0;
-  color: #333;
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+
+    height: 117.5px;
+
+    background-color: #eacdff;
+
+    padding: 21.25px;
+    gap: 5px;
+    border-radius: 24px;
 }
 
-.modalContent p {
-  margin: 10px 0;
-  color: #666;
+.count {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0px;
 }
 
-.closeBtn {
-  padding: 10px 20px;
-  background-color: #ff4444;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 20px;
+.title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.cancelBtn {
+    position: relative;
+    top: 213px;
+    left: 1022px;
+
+    background-color: #201b10;
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+    gap: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+
+    img {
+        background-color: #201b10;
+        width: 32px;
+        height: 32px;
+        transition: 0.3s all ease-in-out;
+    }
 }

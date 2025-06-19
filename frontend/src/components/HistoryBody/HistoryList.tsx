@@ -39,7 +39,9 @@ const HistoryList: React.FC = () => {
                                 <img src="/icons/fileIcon.png" alt="fileIcon" />
                                 <h1>{entry.fileName}</h1>
                             </div>
-                            <h1 className={styles.date}>{new Date(entry.generatedAt).toLocaleDateString('ru-RU')}</h1>
+                            <h1 className={styles.date}>
+                                {new Date(entry.generatedAt).toLocaleDateString('ru-RU')}
+                            </h1>
                             <div
                                 className={`${styles.successFlag} ${!entry.success ? styles.active : ''}`}
                             >
@@ -74,7 +76,7 @@ const HistoryList: React.FC = () => {
                 </button>
             </div>
             {selectedEntry && (
-                <HistoryModal entry={selectedEntry} onClose={() => setSelectedEntry(null)} />
+                    <HistoryModal entry={selectedEntry} onClose={() => setSelectedEntry(null)} />
             )}
         </section>
     );
