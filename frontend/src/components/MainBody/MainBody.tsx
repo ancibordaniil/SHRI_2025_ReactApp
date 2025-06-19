@@ -262,7 +262,7 @@ const MainBody: React.FC = () => {
                             {
                                 key: 'total_spend_galactic',
                                 label: 'общие расходы в галактических кредитах',
-                                value: lastItem.total_spend_galactic.toLocaleString(),
+                                value: Math.round(lastItem.total_spend_galactic).toLocaleString(),
                             },
                             {
                                 key: 'rows_affected',
@@ -292,7 +292,7 @@ const MainBody: React.FC = () => {
                             {
                                 key: 'big_spent_value',
                                 label: 'максимальная сумма расходов за день',
-                                value: lastItem.big_spent_value.toLocaleString(),
+                                value: Math.round(lastItem.big_spent_value).toLocaleString(),
                             },
                             {
                                 key: 'average_spend_galactic',

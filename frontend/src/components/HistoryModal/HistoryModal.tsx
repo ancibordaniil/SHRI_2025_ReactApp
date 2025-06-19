@@ -11,11 +11,11 @@ const HistoryModal: React.FC<HistoryModalProps> = ({ entry, onClose }) => {
     const info = [
         {
             title: 'общие расходы в галактических кредитах',
-            count: entry.totalSpendGalactic.toLocaleString(),
+            count: Math.round(entry.totalSpendGalactic).toLocaleString(),
         },
         {
             title: 'количество обработанных записей',
-            count: entry.rowsAffected.toString(),
+            count: Math.round(entry.rowsAffected).toString(),
         },
         {
             title: 'день года с минимальными расходами',
@@ -35,11 +35,11 @@ const HistoryModal: React.FC<HistoryModalProps> = ({ entry, onClose }) => {
         },
         {
             title: 'максимальная сумма расходов за день',
-            count: entry.bigSpentValue.toLocaleString(),
+            count: Math.round(entry.bigSpentValue).toLocaleString(),
         },
         {
             title: 'средние расходы в галактических кредитах',
-            count: entry.averageSpendGalactic.toLocaleString(),
+            count: Math.round(entry.averageSpendGalactic).toLocaleString(),
         },
     ];
 
