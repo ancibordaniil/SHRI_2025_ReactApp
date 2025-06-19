@@ -6,9 +6,11 @@ import { useHistoryStore } from '../../store/historyStore';
 import { useGenerateStore } from '../../store/store';
 import Loading from '../Loading/Loading';
 import { dayOfYearToDateString } from '../../utils/aggregateHelpers';
+import { useLocation } from 'react-router-dom';
 
 const MainBody: React.FC = () => {
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const location = useLocation()
 
     const status = useGenerateStore((state) => state.status);
     const setStatus = useGenerateStore((state) => state.setStatus);
@@ -147,6 +149,10 @@ const MainBody: React.FC = () => {
             setStatus('done');
         }
     }, [lastItem]);
+
+    useEffect(() => {
+        setStatus('initial')
+    }, [location.pathname])
 
     return (
         <section className={styles.container}>

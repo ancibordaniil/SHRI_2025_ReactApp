@@ -1,7 +1,9 @@
+import HistoryList from "../components/HistoryBody/HistoryList";
+
 export default function HistoryPage() {
   return (
     <>
-        <div>history</div>
+        <HistoryList />
     </>
   );
 }

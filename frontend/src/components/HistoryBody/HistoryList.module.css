@@ -1,0 +1,148 @@
+.historyContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    height: 100vh;
+    background-color: #fce2ff;
+    border-radius: 5px;
+    gap: 40px;
+}
+
+.historyList {
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow-y: auto;
+    gap: 10px;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.historyItem {
+    background-color: #cb81ff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    padding-top: 16px;
+    padding-right: 20px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+
+    .date {
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 100%;
+        letter-spacing: 0px;
+    }
+}
+
+.historyItem:hover {
+    background-color: #e0d0d8;
+}
+
+.nameContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.nameContainer h1 {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.successFlag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.active {
+    opacity: 0.5;
+}
+
+.deleteBtn {
+    border: none;
+    cursor: pointer;
+    gap: 20px;
+    border-radius: 20px;
+    padding-top: 16px;
+    padding-right: 20px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+
+    background-color: #ffffff;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cancelBtn,
+.processBtn {
+    gap: 10px;
+    border-radius: 25px;
+    padding-top: 15px;
+    padding-right: 27px;
+    padding-bottom: 15px;
+    padding-left: 27px;
+
+    border: none;
+    cursor: pointer;
+}
+
+.cancelBtn {
+    background-color: #201b10;
+    color: #ffffff;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.processBtn {
+    background-color: #2ae881;
+    color: #201b10;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    text-decoration: none;
+}
