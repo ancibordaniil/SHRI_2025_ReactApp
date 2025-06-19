@@ -11,9 +11,28 @@
 .historyList {
     display: flex;
     flex-direction: column;
-    max-height: 300px;
+    max-height: 330px;
     overflow-y: auto;
     gap: 10px;
+
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f0e0e8;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d4a5c0;
+        border-radius: 10px;
+        border: 2px solid #f0e0e8;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #c08ea8;
+    }
 }
 
 .rowContainer {
@@ -99,6 +118,13 @@
     padding-left: 20px;
 
     background-color: #ffffff;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.deleteBtn:hover {
+    background-color: #e0d0d8;
 }
 
 .buttons {
@@ -131,6 +157,13 @@
     line-height: 110.00000000000001%;
     letter-spacing: 0%;
     text-align: center;
+
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.cancelBtn:hover {
+    background-color: #e0d0d8;
 }
 
 .processBtn {
@@ -145,4 +178,10 @@
     text-align: center;
 
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.processBtn:hover {
+    background-color: #e0d0d8;
 }

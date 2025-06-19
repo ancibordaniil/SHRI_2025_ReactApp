@@ -52,7 +52,6 @@ const HistoryList: React.FC = () => {
                                 Не удалось обработать
                                 <img src="/icons/sadSmile.png" alt="sadSmile" />
                             </div>
-                            {/* <h1>{entry.success ? 'Успешно' : 'Ошибка'}</h1> */}
                         </div>
                         <button
                             className={styles.deleteBtn}
