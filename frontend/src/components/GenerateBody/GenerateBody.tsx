@@ -66,7 +66,7 @@ const GenerateBody: React.FC = () => {
           </button>
         </div>
       )}
-      {status === 'loading' && <Loading />}
+      {status === 'loading' && <Loading description='идёт процесс генерации'/>}
       {status === 'done' && (
         <div className={styles.btnContainer}>
           <div className={styles.buttons}>

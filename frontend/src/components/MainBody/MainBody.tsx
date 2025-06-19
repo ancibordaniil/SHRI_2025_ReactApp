@@ -176,7 +176,7 @@ const MainBody: React.FC = () => {
                                 или перетащите сюда
                             </>
                         ) : status === 'loading' ? (
-                            <Loading />
+                            <Loading description='идёт парсинг файла'/>
                         ) : status === 'load' ? (
                             <div className={styles.fileContainer}>
                                 <div className={styles.buttons}>
