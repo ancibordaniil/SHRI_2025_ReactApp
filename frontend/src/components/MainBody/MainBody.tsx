@@ -307,11 +307,11 @@ const MainBody: React.FC = () => {
                         ))}
                     </div>
                 ) : lastItem == null ? (
-                    <>
+                    <div className={styles.resultText}>
                         Здесь
                         <br />
                         появятся результаты
-                    </>
+                    </div>
                 ) : (
                     <pre className={styles.preResult}>{lastItem}</pre>
                 )}

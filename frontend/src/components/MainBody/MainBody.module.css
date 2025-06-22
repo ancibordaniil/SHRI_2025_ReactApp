@@ -4,7 +4,6 @@
     align-items: center;
     padding: 40px;
     width: 100%;
-    gap: 60px;
     height: 100vh;
     background-color: #fce2ff;
 }
@@ -44,6 +43,8 @@
     text-align: center;
     padding: 60px;
     transition: all 0.3s;
+
+    margin-bottom: 80px;
 }
 
 .instructions {
@@ -227,8 +228,7 @@
 .gridContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px 39px; /* Row gap: 10px, Column gap: 39px */
-    width: 100%;
+    gap: 10px 39px;
 }
 
 .gridItem {
@@ -259,4 +259,21 @@
     line-height: 100%;
     letter-spacing: 0px;
     text-wrap: nowrap;
+}
+
+.resultText {
+    color: rgba(203, 129, 255, 1);
+    height: 407px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
 }

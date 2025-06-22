@@ -5,16 +5,14 @@ import GenetatorPage from './pages/GeneratorPage';
 import HistoryPage from './pages/HistoryPage';
 
 export default function App() {
-  return (
-    <>
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/generate" element={<GenetatorPage />} />
-          <Route path="/history" element={<HistoryPage />} />
-        </Routes>
-      </main>
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/generate" element={<GenetatorPage />} />
+                <Route path="/history" element={<HistoryPage />} />
+            </Routes>
+        </>
+    );
 }
